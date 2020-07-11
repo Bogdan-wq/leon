@@ -1,0 +1,185 @@
+@import '../bootstrap/_rfs.scss';
+
+
+html,body {
+  font-family: 'Work Sans', sans-serif;
+  font-size:15px;
+}
+
+
+$theme-color:#10cab7;
+$bg-grey:#fafafa;
+
+a {
+  color:black;
+}
+
+.title {
+  font-weight: 800;
+  font-size:20px;
+}
+
+
+
+.titles-top {
+  height: 145px;
+  &-title {
+    @include responsive-font-size(130px);
+    top:0;
+    left: 0;
+    right:0;
+    bottom:0;
+    z-index:0;
+    color:rgb(240,240,240);
+    font-weight: 800;
+    &_darker {
+      color:rgb(230,230,230);
+    }
+  }
+
+  &-term {
+    position: relative;
+    z-index: 5;
+    font-size: 25px;
+  }
+}
+
+.header {
+  .navbar {
+    box-shadow: none;
+  }
+
+  .navbar-brand {
+    width:45px;
+    height: 30px;
+    background-image:url("../img/Logo.png");
+    background-repeat: no-repeat;
+    background-size:auto auto;
+    background-position: center;
+  }
+  .nav-link {
+    &:hover {
+      color:$theme-color !important;
+    }
+  }
+  .container-fluid {
+    background-image:url("../img/header-bg.jpg");
+    background-size: cover;
+    background-position: center;
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top:0;
+      left:0;
+      right:0;
+      bottom:0;
+      z-index:5;
+      background-color: rgba(black,.3);
+    }
+  }
+
+  .header-content {
+    padding-bottom: 250px;
+    position: relative;
+    z-index:10;
+  }
+
+  .header-title {
+    font-weight:800;
+    color:$theme-color;
+    font-size: 55px;
+  }
+
+  .header-text {
+    font-size: 20px;
+    width:30%;
+    @media (max-width: 575px) {
+      width:75%;
+    }
+  }
+}
+
+.steps {
+  .card {
+    box-shadow: none;
+  }
+}
+
+
+.services-photo {
+  &-rightbar {
+    right:-40px;
+    bottom:0;
+    top:-30px;
+    height: calc(100% + 60px);
+    width:40px;
+    background-color: #2c4755;
+    z-index:10;
+    @media (max-width: 991px) {
+      display: none;
+    }
+  }
+
+  &::before {
+    content:'';
+    display: block;
+    position: absolute;
+    top:-30px;
+    height:30px;
+    width:50px;
+    right:-1px;
+    background-color: #2c4755;
+    @media (max-width: 991px) {
+      display: none;
+    }
+  }
+
+  &::after {
+    content:'';
+    display: block;
+    position: absolute;
+    bottom:-30px;
+    height:30px;
+    width:50px;
+    right:-1px;
+    background-color: #2c4755;
+    @media (max-width: 991px) {
+      display: none;
+    }
+  }
+}
+
+
+
+.portfolio {
+  background-color:$bg-grey;
+}
+
+.about {
+  .lead {
+    &:after {
+      content:'';
+      display:block;
+      border:1px solid $theme-color;
+      width:75%;
+      margin-top: 30px;
+    }
+  }
+
+  p {
+    line-height: 40px;
+  }
+}
+
+.contact-us {
+  background-color: $bg-grey;
+  .email {
+    color: $theme-color;
+    @include responsive-font-size(50px);
+    font-weight: 800;
+  }
+}
+
+
